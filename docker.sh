@@ -25,7 +25,9 @@ echo
         echo "Y" | sudo apt install docker-ce
 echo
 echo
-         echo "docker successfully installed"
+       usermod -aG docker ${USER}
+       su - ${USER}
+       echo "docker successfully installed"
 
 echo
 echo
