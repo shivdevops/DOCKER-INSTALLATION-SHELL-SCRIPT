@@ -3,36 +3,48 @@
 #docker_installation
 
 if [ ! -x /var/lib/docker ]; then
-
+      
         echo "INSTALLING docker"
 echo
+echo    #install docker dependencies 
+         apt install apt-transport-https ca-certificates curl software-properties-common -y
 echo
-        echo "Y" | apt install apt-transport-https ca-certificates curl software-properties-common
-echo
-echo
+echo   #add docker’s official GPG key
         curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 echo
 echo
-        add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+        #set up the stable repository.
+	add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"	
 echo
 echo
-        echo "Y" | apt update
+	#update the packages
+	apt update -y
+
 echo
 echo
-        apt-cache policy docker-ce
+	#checks install from the Docker repo instead of the default Ubuntu repo:
+	apt-cache policy docker-ce 
 echo
 echo
-        echo "Y" | sudo apt install docker-ce
+
+	#installing dcoker through docker-ce
+	apt install docker-ce -y 
 echo
 echo
-       usermod -aG docker ${USER}
-       su - ${USER}
+	#installing docker-compose
+	apt install docker-compose -y
+echo
+echo
+       #adds your username to the docker group
+	usermod -aG docker ${USER}
+       
        echo "docker successfully installed"
 
 echo
 echo
 
 else
+
 echo
 echo
         echo "DOCKER ALREADY INSTALLED"
