@@ -3,15 +3,15 @@
 
 * Download the script.
 
-* Run the script with sudo.  
-
-    ` ` ` sudo ./docker.sh ` ` ` 
-
 * change the file permission with 777 
 
-    ` ` ` sudo chmod 777 docker.sh ` ` `
-   
-* Latest current version of docker will be installed.
+    ` ` ` sudo chmod 777 docker.sh ` ` ` 
+
+* Run the script with sudo.  
+
+ ` ` ` sudo ./docker.sh ` ` ` 
+
+* Latest current version with respective OS's of docker will be installed.
 
  ## Prerequisite:
     * Ubuntu OS.
