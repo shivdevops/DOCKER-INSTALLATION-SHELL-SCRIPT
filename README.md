@@ -9,7 +9,7 @@
 
 * Run the script with sudo.  
 
- ` ` ` sudo ./docker.sh ` ` ` 
+   ` ` ` sudo ./docker.sh ` ` ` 
 
 * Latest current version with respective OS's of docker will be installed.
 
